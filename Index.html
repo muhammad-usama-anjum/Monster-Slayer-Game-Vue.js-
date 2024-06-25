@@ -27,6 +27,13 @@
             </div>
         </section>
 
+        <section class="container" v-if="winner">
+            <h2>Game Over</h2>
+            <h3 v-if="winner==='monster'">You Lost</h3>
+            <h3 v-else-if="winner==='player'">You Won</h3>
+            <h3 v-else>Draw</h3>
+        </section>
+
         <section id="controls">
            <button @click="attackMonster">Attack</button>
            <button :disabled="mayUseSpecialAttack" @click="specialAttackMonster">Special Attack</button>
